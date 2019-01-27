@@ -9,7 +9,10 @@ lazy val root = (project in file("."))
       guice,
       "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
     ),
-    javaAgents += "com.datadoghq" % "dd-java-agent" % "0.22.0"
+    javaAgents += "com.datadoghq" % "dd-java-agent" % "0.22.0",
+    mappings in Universal ++= Seq(
+      file("Procfile") -> "Procfile"
+    )
   )
 
 // Adds additional packages into Twirl
