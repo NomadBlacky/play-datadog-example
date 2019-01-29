@@ -1,3 +1,5 @@
+import NativePackagerHelper._
+
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala, JavaAppPackaging, JavaAgentPackaging)
   .settings(
@@ -12,7 +14,8 @@ lazy val root = (project in file("."))
     javaAgents += "com.datadoghq" % "dd-java-agent" % "0.22.0",
     mappings in Universal ++= Seq(
       file("Procfile") -> "Procfile"
-    )
+    ),
+    mappings in Universal ++= directory(".ebextensions")
   )
 
 // Adds additional packages into Twirl

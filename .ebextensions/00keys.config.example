@@ -1,0 +1,7 @@
+option_settings:
+  - namespace:  aws:elasticbeanstalk:application:environment
+    option_name:  DD_API_KEY
+    value:  "<<YOUR_API_KEY>>"
+  - namespace:  aws:elasticbeanstalk:application:environment
+    option_name:  APPLICATION_SECRET
+    value:  "<<APPLICATION_SECRET>>"
